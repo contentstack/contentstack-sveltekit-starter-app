@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let section: any;
+	import type { Section } from 'src/model/page.model';
+	export let section: Section;
 </script>
 
 <div class="home-advisor-section">

@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let fromBlog: any;
+	import type { FromBlog } from 'src/model/page.model';
+	export let fromBlog: FromBlog;
 </script>
 
 <div class="community-section">
@@ -34,7 +35,7 @@
 						<div {...blog.$?.body}>{@html blog.body.slice(0, 300)}</div>
 					{/if}
 					{#if blog.url}
-						<a class="blogpost-readmore" href={blog.url}>{'Read More'}</a>
+						<a class="blogpost-readmore" href={blog.url}>{'Read More'} --></a>
 					{/if}
 				</div>
 			</div>

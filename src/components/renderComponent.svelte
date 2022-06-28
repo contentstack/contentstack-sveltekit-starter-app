@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Page } from 'src/model/page.model';
 	import AboutSectionBucket from './about-section-bucket.svelte';
 	import BlogBanner from './blog-banner.svelte';
 	import BlogSection from './blog-section.svelte';
@@ -9,7 +10,7 @@
 	import Section from './section.svelte';
 	import TeamSection from './team-section.svelte';
 
-	export let pageComponents: any, blogPost: any, entryUid: any, contentTypeUid: any, locale: any;
+	export let pageComponents: Page, blogPost: any;
 </script>
 
 <div>

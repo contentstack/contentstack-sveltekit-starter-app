@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let section: any;
+	import type { SectionWithBuckets, SectionWithCards } from 'src/model/page.model';
+
+	export let section: SectionWithBuckets;
 </script>
 
 <div class="member-main-section">
@@ -29,7 +31,7 @@
 						{...bucket.call_to_action.$?.href}
 						href={bucket.call_to_action.href ? bucket.call_to_action.href : '#'}
 					>
-						{bucket.call_to_action.title}
+						{bucket.call_to_action.title} -->
 					</a>
 				{/if}
 			</div>

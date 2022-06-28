@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let hero_banner: any;
+	import type { HeroBanner } from 'src/model/page.model';
+
+	export let hero_banner: HeroBanner;
 </script>
 
 <div class="hero-banner" style="background: {hero_banner?.bg_color ? hero_banner.bg_color : ''}">

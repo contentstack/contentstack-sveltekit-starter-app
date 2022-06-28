@@ -23,7 +23,7 @@
 	<div class="max-width header-div">
 		<div class="wrapper-logo">
 			{#if headerData}
-				<a class="logo-tag" title="Contentstack" href="/">
+				<a class="logo-tag" title="Contentstack" href="/" sveltekit:prefetch>
 					<img
 						class="logo"
 						src={headerData.logo.url}
@@ -46,6 +46,7 @@
 							<a
 								href={list.page_reference[0].url}
 								class={$page.url.pathname === list.page_reference[0].url ? 'active' : ''}
+								sveltekit:prefetch
 							>
 								{list.label}
 							</a>

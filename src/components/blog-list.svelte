@@ -9,7 +9,7 @@
 {#if bloglist}
 	<div class="blog-list">
 		{#if bloglist.featured_image}
-			<a href={bloglist.url}>
+			<a href={bloglist.url} sveltekit:prefetch>
 				<img
 					class="blog-list-img"
 					src={bloglist.featured_image.url}
@@ -35,7 +35,7 @@
 			<div {...bloglist.$?.body}>{@html body}</div>
 			{#if bloglist.url}
 				<a href={bloglist.url}>
-					<span>{'Read more'}</span>
+					<span>Read more</span> -->
 				</a>
 			{/if}
 		</div>

@@ -1,8 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 
 body {
 	font-family: Inter, sans-serif;
@@ -17,6 +13,7 @@ h3,
 h4 {
 	font-weight: bold;
 	letter-spacing: 0.2px;
+	margin: 0.2rem 0;
 }
 
 body h1 {
@@ -42,6 +39,7 @@ body a {
 
 body p {
 	color: #444444;
+	margin: 0.5rem 0;
 }
 
 .max-width {

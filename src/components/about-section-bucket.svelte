@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let sectionWithBuckets: any;
+	import type { SectionWithBuckets } from 'src/model/page.model';
+	export let sectionWithBuckets: SectionWithBuckets;
 </script>
 
 <div class="member-main-section">

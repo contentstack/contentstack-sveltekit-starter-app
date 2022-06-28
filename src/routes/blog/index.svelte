@@ -6,6 +6,7 @@
 
 	let getList: any;
 	let getEntry: any;
+	let archived: any = [];
 	const fetchBlogData = async () => {
 		let result = await getPageRes('/blog');
 		return result;
@@ -17,15 +18,16 @@
 
 	$: fetchBlogData().then((blogData) => (getEntry = blogData));
 	$: fetchBlogList().then((blogList) => (getList = blogList));
+	$: getList &&
+		getList.map((post: any) => {
+			if (post.is_archived) {
+				archived.push(post);
+			}
+			archived = archived;
+		});
 </script>
 
-<RenderComponents
-	pageComponents={getEntry}
-	blogPost={getList}
-	entryUid={getEntry?.uid}
-	contentTypeUid="page"
-	locale={getEntry?.locale}
-/>
+<RenderComponents pageComponents={getEntry} blogPost={getList} />
 <div class="blog-container">
 	<div class="blog-column-left">
 		{#if getList}
@@ -38,10 +40,10 @@
 	</div>
 	<div class="blog-column-right">
 		{#if getEntry && getEntry.page_components[1].widget}
-			<h2>{getEntry.page_components[1].widget.title_h2}</h2>
+			<h2 style="margin-bottom: 25px !important">{getEntry.page_components[1].widget.title_h2}</h2>
 		{/if}
 		{#if getList}
-			<ArchiveRelative blogs={getList} />
+			<ArchiveRelative blogs={archived} />
 		{/if}
 	</div>
 </div>

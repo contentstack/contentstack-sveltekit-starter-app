@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let embedCode: any;
+	import type { SectionWithHtmlCode } from 'src/model/page.model';
+
+	export let embedCode: SectionWithHtmlCode;
 </script>
 
 {#if embedCode.html_code_alignment === 'Left'}

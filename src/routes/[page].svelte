@@ -6,15 +6,9 @@
 	let Entry: any;
 	const fetchData = async () => {
 		let entryRes = await getPageRes($page.url.pathname);
-		return entryRes;
+		Entry = entryRes;
 	};
-	$: fetchData().then((response) => (Entry = response));
+	fetchData();
 </script>
 
-<RenderComponent
-	pageComponents={Entry}
-	blogPost={null}
-	entryUid={Entry?.uid}
-	contentTypeUid="page"
-	locale={Entry?.locale}
-/>
+<RenderComponent pageComponents={Entry} blogPost={null} />
