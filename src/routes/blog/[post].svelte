@@ -4,7 +4,7 @@
 	import ArchiveRelative from '../../components/archive-relative.svelte';
 	import RenderComponents from '../../components/renderComponent.svelte';
 	import moment from 'moment';
-	import { afterUpdate, onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 	import type { BlogPostModel } from 'src/model/blogpost.model';
 	let post: BlogPostModel;
 	let banner: any;

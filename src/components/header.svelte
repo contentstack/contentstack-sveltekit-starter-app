@@ -2,6 +2,7 @@
 	import { getHeaderRes } from '../helper/index.d';
 	import { page } from '$app/stores';
 	import type { HeaderModel } from '../model/header.model';
+	import ToolTip from './tool-tip.svelte';
 	let headerData: HeaderModel;
 	const fetchData = async () => {
 		let response = await getHeaderRes();
@@ -55,5 +56,10 @@
 				{/if}
 			</ul>
 		</nav>
+		<ToolTip content="JSON Preview" direction="top">
+			<span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+				<img src="/json.svg" alt="JSON Preview icon" />
+			</span>
+		</ToolTip>
 	</div>
 </header>
