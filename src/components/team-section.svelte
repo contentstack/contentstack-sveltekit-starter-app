@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let ourTeam: any;
+	import type { OurTeam } from 'src/model/page.model';
+
+	export let ourTeam: OurTeam;
 </script>
 
 <div class="about-team-section">

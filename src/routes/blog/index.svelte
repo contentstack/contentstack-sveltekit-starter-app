@@ -3,10 +3,11 @@
 	import ArchiveRelative from '../../components/archive-relative.svelte';
 	import RenderComponents from '../../components/renderComponent.svelte';
 	import { getPageRes, getBlogListRes } from '../../helper/index.d';
+	import type { BlogPostModel } from 'src/model/blogpost.model';
 
-	let getList: any;
+	let getList: BlogPostModel[];
 	let getEntry: any;
-	let archived: any = [];
+	let archived: BlogPostModel[] = [];
 	const fetchBlogData = async () => {
 		let result = await getPageRes('/blog');
 		return result;
@@ -19,7 +20,7 @@
 	$: fetchBlogData().then((blogData) => (getEntry = blogData));
 	$: fetchBlogList().then((blogList) => (getList = blogList));
 	$: getList &&
-		getList.map((post: any) => {
+		getList.map((post: BlogPostModel) => {
 			if (post.is_archived) {
 				archived.push(post);
 			}
@@ -40,7 +41,7 @@
 	</div>
 	<div class="blog-column-right">
 		{#if getEntry && getEntry.page_components[1].widget}
-			<h2 style="margin-bottom: 25px !important">{getEntry.page_components[1].widget.title_h2}</h2>
+			<h2 style="margin-bottom: 25px">{getEntry.page_components[1].widget.title_h2}</h2>
 		{/if}
 		{#if getList}
 			<ArchiveRelative blogs={archived} />

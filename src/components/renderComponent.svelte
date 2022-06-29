@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { BlogPostModel } from 'src/model/blogpost.model';
+
 	import type { Page } from 'src/model/page.model';
 	import AboutSectionBucket from './about-section-bucket.svelte';
 	import BlogBanner from './blog-banner.svelte';
@@ -10,7 +12,7 @@
 	import Section from './section.svelte';
 	import TeamSection from './team-section.svelte';
 
-	export let pageComponents: Page, blogPost: any;
+	export let pageComponents: Page, blogPost: BlogPostModel | null;
 </script>
 
 <div>

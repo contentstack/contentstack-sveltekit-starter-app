@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { SectionWithCards } from 'src/model/page.model';
 	export let cards: any;
 </script>
 

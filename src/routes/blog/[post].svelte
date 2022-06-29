@@ -5,7 +5,8 @@
 	import RenderComponents from '../../components/renderComponent.svelte';
 	import moment from 'moment';
 	import { afterUpdate, onMount } from 'svelte';
-	let post: any;
+	import type { BlogPostModel } from 'src/model/blogpost.model';
+	let post: BlogPostModel;
 	let banner: any;
 	let url = `/blog/${$page.params.post}`;
 

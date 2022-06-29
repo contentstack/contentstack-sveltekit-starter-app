@@ -22,30 +22,6 @@ const Stack = contentstack.Stack({
 	}
 });
 
-/**
- * initialize live preview
- */
-// ContentstackLivePreview.init({
-// 	enable: true,
-// 	stackSdk: Stack,
-// 	clientUrlParams: {
-// 		host: import.meta.env.VITE_CONTENTSTACK_APP_HOST
-// 			? import.meta.env.VITE_CONTENTSTACK_APP_HOST
-// 			: ''
-// 	},
-// 	ssr: false
-// });
-
-// if (import.meta.env.VITE_CONTENTSTACK_API_HOST) {
-// 	Stack.setHost(import.meta.env.VITE_CONTENTSTACK_API_HOST);
-// }
-
-// const renderOption = {
-// 	['span']: (node, next) => {
-// 		return next(node.children);
-// 	}
-// };
-
 export const onEntryChange = ContentstackLivePreview.onEntryChange;
 
 export default {
@@ -71,7 +47,6 @@ export default {
 							Utils.jsonToHTML({
 								entry: result,
 								paths: jsonRtePath
-								// renderOption
 							});
 						resolve(result);
 					},
@@ -103,7 +78,6 @@ export default {
 						Utils.jsonToHTML({
 							entry: result,
 							paths: jsonRtePath
-							// renderOption
 						});
 					resolve(result[0]);
 				},
