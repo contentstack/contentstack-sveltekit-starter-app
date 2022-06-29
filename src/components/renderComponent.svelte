@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { BlogPostModel } from 'src/model/blogpost.model';
-
 	import type { Page } from 'src/model/page.model';
 	import AboutSectionBucket from './about-section-bucket.svelte';
 	import BlogBanner from './blog-banner.svelte';

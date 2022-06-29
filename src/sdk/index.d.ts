@@ -2,8 +2,6 @@
 import * as contentstack from 'contentstack';
 import * as Utils from '@contentstack/utils';
 
-import ContentstackLivePreview from '@contentstack/live-preview-utils';
-
 const Stack = contentstack.Stack({
 	api_key: import.meta.env.VITE_API_KEY,
 	delivery_token: import.meta.env.VITE_DELIVERY_TOKEN,
@@ -21,8 +19,6 @@ const Stack = contentstack.Stack({
 			: ''
 	}
 });
-
-export const onEntryChange = ContentstackLivePreview.onEntryChange;
 
 export default {
 	/**
