@@ -4,11 +4,14 @@
 	import JSONTree from 'svelte-json-tree';
 	import { afterUpdate, onMount } from 'svelte';
 	import ToolTip from './tool-tip.svelte';
-	let pageRes: any;
-	let headerRes: any;
-	let footerRes: any;
-	let url: String = $page.url.pathname;
-	let forceUpdate: number;
+	import type { Page } from 'src/model/page.model';
+	import type { HeaderModel } from 'src/model/header.model';
+	import type { FooterModel } from 'src/model/footer.model';
+	let pageRes: Page;
+	let headerRes: HeaderModel;
+	let footerRes: FooterModel;
+	let url = $page.url.pathname;
+	let forceUpdate = 0;
 
 	function filterObject(inputObject: any) {
 		const unWantedProps = [
@@ -33,8 +36,8 @@
 	}
 
 	function copyObject(object: any) {
-		navigator.clipboard.writeText(object);
 		forceUpdate = 1;
+		navigator.clipboard.writeText(object);
 	}
 
 	async function getPageData() {
@@ -89,7 +92,7 @@
 				<div>
 					<span
 						class="json-copy"
-						onClick={(e) => copyObject(JSON.stringify(filteredData))}
+						on:click={(e) => copyObject(JSON.stringify(filteredData))}
 						aria-hidden="true"
 					>
 						<ToolTip content={forceUpdate === 0 ? 'Copy' : 'Copied'} direction="top">
