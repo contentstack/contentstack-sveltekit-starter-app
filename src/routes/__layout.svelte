@@ -6,6 +6,7 @@
 	import '../styles/json-preview.css';
 	import '../styles/third-party.css';
 	import '../styles/tool-tip.css';
+	import '@contentstack/live-preview-utils/dist/main.css';
 </script>
 
 <Header />

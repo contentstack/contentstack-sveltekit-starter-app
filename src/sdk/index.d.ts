@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import * as contentstack from 'contentstack';
 import * as Utils from '@contentstack/utils';
+import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
 const Stack = contentstack.Stack({
 	api_key: import.meta.env.VITE_API_KEY,
@@ -19,6 +20,28 @@ const Stack = contentstack.Stack({
 			: ''
 	}
 });
+
+if (import.meta.env.VITE_CONTENTSTACK_API_HOST) {
+	Stack.setHost(import.meta.env.VITE_CONTENTSTACK_API_HOST);
+}
+
+ContentstackLivePreview.init({
+	stackSdk: Stack,
+	clientUrlParams: {
+		host: import.meta.env.VITE_CONTENTSTACK_APP_HOST
+	},
+	stackDetails: {
+		apiKey: import.meta.env.VITE_API_KEY,
+		environment: import.meta.env.VITE_ENVIRONMENT
+	},
+	ssr: false
+});
+
+export const { onEntryChange } = ContentstackLivePreview;
+
+const renderOption = {
+	span: (node, next) => next(node.children)
+};
 
 export default {
 	/**
@@ -42,7 +65,8 @@ export default {
 						jsonRtePath &&
 							Utils.jsonToHTML({
 								entry: result,
-								paths: jsonRtePath
+								paths: jsonRtePath,
+								renderOption
 							});
 						resolve(result);
 					},
@@ -73,7 +97,8 @@ export default {
 					jsonRtePath &&
 						Utils.jsonToHTML({
 							entry: result,
-							paths: jsonRtePath
+							paths: jsonRtePath,
+							renderOption
 						});
 					resolve(result[0]);
 				},
