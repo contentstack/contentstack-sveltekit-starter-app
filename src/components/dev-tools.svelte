@@ -62,6 +62,9 @@
 			url = window.location.pathname;
 			getPageData();
 		}
+		if (forceUpdate !== 0) {
+			setTimeout(() => (forceUpdate = 0), 3000);
+		}
 	});
 
 	$: json = {
