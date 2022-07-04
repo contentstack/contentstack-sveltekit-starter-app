@@ -14,7 +14,7 @@ You can check the [live demo](https://contentstack-sveltekit-starter-app.vercel.
 
 ## Tutorial
 
-We have created an in-depth tutorial on how you can create a React.js starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
+We have created an in-depth tutorial on how you can create a Sveltekit starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
 
 [Build Website using Sveltekit and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-react-js-and-contentstack/)
 
