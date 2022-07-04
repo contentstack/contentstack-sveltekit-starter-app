@@ -4,7 +4,7 @@
 
 About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-About this project: React.js is a JavaScript library for dynamic websites with rich user interfaces. This guide will help you create a starter marketing website built using the React.js framework with minimal steps.
+About this project: Sveltekit is a JavaScript framework for dynamic websites with rich user interfaces. This guide will help you create a starter marketing website built using the React.js framework with minimal steps.
 
 ![contentstack-sveltekit-starter-app-vercel-app](/static/starter-app.png)
 
