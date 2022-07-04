@@ -1,6 +1,6 @@
 [![Contentstack Logo](/static/contentstack.png)](https://www.contentstack.com/)
 
-# Build a Starter Website with React.js and Contentstack
+# Build a Starter Website with Sveltekit and Contentstack
 
 About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
