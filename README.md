@@ -1,4 +1,4 @@
-[![Contentstack Logo](/public/contentstack.png)](https://www.contentstack.com/)
+[![Contentstack Logo](/static/contentstack.png)](https://www.contentstack.com/)
 
 # Build a Starter Website with React.js and Contentstack
 
@@ -6,7 +6,7 @@ About Contentstack: Contentstack is a headless CMS with an API-first approach th
 
 About this project: React.js is a JavaScript library for dynamic websites with rich user interfaces. This guide will help you create a starter marketing website built using the React.js framework with minimal steps.
 
-![contentstack-react-starter-app-vercel-app](/public/starter-app.png)
+![contentstack-react-starter-app-vercel-app](/static/starter-app.png)
 
 ## Live Demo
 
