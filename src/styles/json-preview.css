@@ -11,7 +11,7 @@
 	--json-tree-date-color: #8d8d8d;
 	/* position */
 	--json-tree-li-indentation: 20px;
-	--json-tree-li-line-height: 2;
+	--json-tree-li-line-height: 1.7;
 	/* font */
 	--json-tree-font-size: 1em;
 	--json-tree-font-family: 'Courier New', Courier, monospace;
