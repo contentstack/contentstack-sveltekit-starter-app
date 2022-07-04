@@ -1,6 +1,10 @@
 {
-	"name": "sveltekit-starter",
-	"version": "0.0.1",
+	"name": "contentstack-sveltekit-starter-app",
+	"description": "A starter app for Contentstack and Sveltekit",
+	"version": "1.0.0",
+	"private": true,
+	"author": "Contentstack",
+	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",

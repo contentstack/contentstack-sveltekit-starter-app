@@ -4,9 +4,9 @@ import * as Utils from '@contentstack/utils';
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
 const Stack = contentstack.Stack({
-	api_key: import.meta.env.VITE_API_KEY,
-	delivery_token: import.meta.env.VITE_DELIVERY_TOKEN,
-	environment: import.meta.env.VITE_ENVIRONMENT,
+	api_key: import.meta.env.VITE_CONTENTSTACK_API_KEY,
+	delivery_token: import.meta.env.VITE_CONTENTSTACK_DELIVERY_TOKEN,
+	environment: import.meta.env.VITE_CONTENTSTACK_ENVIRONMENT,
 	region: import.meta.env.VITE_CONTENTSTACK_REGION
 		? import.meta.env.VITE_CONTENTSTACK_REGION
 		: 'us',
