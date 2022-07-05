@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getHeaderRes } from '../helper/index.d';
+  import { getHeaderRes } from '../helper/index';
   import { page } from '$app/stores';
   import type { HeaderModel } from '../model/header.model';
   import ToolTip from './tool-tip.svelte';

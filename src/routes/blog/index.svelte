@@ -2,7 +2,7 @@
   import BlogList from '../../components/blog-list.svelte';
   import ArchiveRelative from '../../components/archive-relative.svelte';
   import RenderComponents from '../../components/renderComponent.svelte';
-  import { getPageRes, getBlogListRes } from '../../helper/index.d';
+  import { getPageRes, getBlogListRes } from '../../helper/index';
   import type { BlogPostModel } from 'src/model/blogpost.model';
 
   let getList: BlogPostModel[];
