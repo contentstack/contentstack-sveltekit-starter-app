@@ -5,7 +5,7 @@
   import { getPageRes, getBlogListRes } from '../../helper/index';
   import type { BlogPostModel } from 'src/model/blogpost.model';
 
-  let getList: BlogPostModel[];
+  let getList: BlogPostModel[] = [];
   let getEntry: any;
   let archived: BlogPostModel[] = [];
   const fetchBlogData = async () => {

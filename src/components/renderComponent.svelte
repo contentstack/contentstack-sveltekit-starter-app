@@ -11,7 +11,7 @@
   import Section from './section.svelte';
   import TeamSection from './team-section.svelte';
 
-  export let pageComponents: Page, blogPost: BlogPostModel | null;
+  export let pageComponents: Page, blogPost: BlogPostModel[] | null;
 </script>
 
 <div>
