@@ -1,15 +1,26 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-undef */
 import * as contentstack from 'contentstack';
 import * as Utils from '@contentstack/utils';
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
 
+type GetEntry = {
+  contentTypeUid: string;
+  referenceFieldPath: string[] | undefined;
+  jsonRtePath: string[] | undefined;
+};
+
+type GetEntryByUrl = {
+  entryUrl: string | undefined;
+  contentTypeUid: string;
+  referenceFieldPath: string[] | undefined;
+  jsonRtePath: string[] | undefined;
+};
+
 const Stack = contentstack.Stack({
   api_key: import.meta.env.VITE_CONTENTSTACK_API_KEY,
   delivery_token: import.meta.env.VITE_CONTENTSTACK_DELIVERY_TOKEN,
   environment: import.meta.env.VITE_CONTENTSTACK_ENVIRONMENT,
-  region: import.meta.env.VITE_CONTENTSTACK_REGION
-    ? import.meta.env.VITE_CONTENTSTACK_REGION
-    : 'us',
   live_preview: {
     management_token: import.meta.env.VITE_CONTENTSTACK_MANAGEMENT_TOKEN
       ? import.meta.env.VITE_CONTENTSTACK_MANAGEMENT_TOKEN
@@ -26,6 +37,7 @@ if (import.meta.env.VITE_CONTENTSTACK_API_HOST) {
 }
 
 ContentstackLivePreview.init({
+  //@ts-ignore
   stackSdk: Stack,
   clientUrlParams: {
     host: import.meta.env.VITE_CONTENTSTACK_APP_HOST
@@ -40,7 +52,7 @@ ContentstackLivePreview.init({
 export const { onEntryChange } = ContentstackLivePreview;
 
 const renderOption = {
-  span: (node, next) => next(node.children)
+  span: (node: any, next: any) => next(node.children)
 };
 
 export default {
@@ -52,7 +64,7 @@ export default {
    * @param {* Json RTE path} jsonRtePath
    *
    */
-  getEntry({ contentTypeUid, referenceFieldPath, jsonRtePath }) {
+  getEntry({ contentTypeUid, referenceFieldPath, jsonRtePath }: GetEntry) {
     return new Promise((resolve, reject) => {
       const query = Stack.ContentType(contentTypeUid).Query();
       if (referenceFieldPath) query.includeReference(referenceFieldPath);
@@ -86,7 +98,7 @@ export default {
    * @param {* Json RTE path} jsonRtePath
    * @returns
    */
-  getEntryByUrl({ contentTypeUid, entryUrl, referenceFieldPath, jsonRtePath }) {
+  getEntryByUrl({ contentTypeUid, entryUrl, referenceFieldPath, jsonRtePath }: GetEntryByUrl) {
     return new Promise((resolve, reject) => {
       const blogQuery = Stack.ContentType(contentTypeUid).Query();
       if (referenceFieldPath) blogQuery.includeReference(referenceFieldPath);

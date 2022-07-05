@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getFooterRes, getHeaderRes, getPageRes } from '../helper/index.d';
+  import { getFooterRes, getHeaderRes, getPageRes } from '../helper/index';
   import { page } from '$app/stores';
   import JSONTree from 'svelte-json-tree';
   import { afterUpdate, onMount } from 'svelte';
@@ -68,11 +68,9 @@
   });
 
   $: json = {
-    response: {
-      header: headerRes,
-      footer: footerRes,
-      page: pageRes
-    }
+    header: headerRes,
+    footer: footerRes,
+    page: pageRes
   };
   $: filteredData = filterObject(json);
 </script>

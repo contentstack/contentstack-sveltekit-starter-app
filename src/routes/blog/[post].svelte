@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getPageRes, getBlogPostRes } from '../../helper/index.d';
+  import { getPageRes, getBlogPostRes } from '../../helper/index';
   import { page } from '$app/stores';
   import ArchiveRelative from '../../components/archive-relative.svelte';
   import RenderComponents from '../../components/renderComponent.svelte';

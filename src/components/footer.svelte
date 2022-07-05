@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { FooterModel } from 'src/model/footer.model';
 
-  import { getFooterRes } from '../helper/index.d';
+  import { getFooterRes } from '../helper/index';
   let footerData: FooterModel;
   const getFooterData = async () => {
     let result = await getFooterRes();
