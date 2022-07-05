@@ -39,7 +39,7 @@ export const getAllEntries = async (): Promise<AllEntries> => {
 };
 
 export const getPageRes = async (entryUrl: string): Promise<Page> => {
-  const response: Page[] = (await Stack.getEntryByUrl({
+  const response: any = (await Stack.getEntryByUrl({
     contentTypeUid: 'page',
     entryUrl,
     referenceFieldPath: ['page_components.from_blog.featured_blogs'],
