@@ -89,16 +89,16 @@
       getBlogListData();
     }
   });
+  $: if (url.includes('/blog')) {
+    getBlogListData();
+  }
+  $: if (forceUpdate !== 0) {
+    setTimeout(() => (forceUpdate = 0), 3000);
+  }
   afterUpdate(() => {
     if (url !== window.location.pathname) {
       url = window.location.pathname;
       getPageData();
-    }
-    if (forceUpdate !== 0) {
-      setTimeout(() => (forceUpdate = 0), 3000);
-    }
-    if (url.includes('/blog')) {
-      getBlogListData();
     }
   });
 </script>
