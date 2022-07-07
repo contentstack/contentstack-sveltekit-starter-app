@@ -1,38 +1,27 @@
-# create-svelte
+[![Contentstack Logo](/static/contentstack.png)](https://www.contentstack.com/)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Build a Starter Website with Sveltekit and Contentstack
 
-## Creating a project
+About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-If you're seeing this, you've probably already done this step. Congrats!
+About this project: Sveltekit is a JavaScript framework for dynamic websites with rich user interfaces. This guide will help you create a starter marketing website built using the Sveltekit framework with minimal steps.
 
-```bash
-# create a new project in the current directory
-npm init svelte
+![contentstack-sveltekit-starter-app-vercel-app](/static/starter-app.png)
 
-# create a new project in my-app
-npm init svelte my-app
-```
+## Live Demo
 
-## Developing
+You can check the [live demo](https://contentstack-sveltekit-starter-app.vercel.app/) to get first-hand experience of the website.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Tutorial
 
-```bash
-npm run dev
+We have created an in-depth tutorial on how you can create a Sveltekit starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+[Build Website using Sveltekit and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-react-js-and-contentstack/)
 
-## Building
+**More Resources**
 
-To create a production version of your app:
+Read Contentstack [docs](https://www.contentstack.com/docs/)
 
-```bash
-npm run build
-```
+Region support [docs](https://www.contentstack.com/docs/developers/selecting-region-in-contentstack-starter-apps)
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Learn about [Sveltekit](https://kit.svelte.dev/docs/introduction)
