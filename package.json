@@ -1,6 +1,10 @@
 {
-	"name": "sveltekit-starter",
-	"version": "0.0.1",
+	"name": "contentstack-sveltekit-starter-app",
+	"description": "A starter app for Contentstack and Sveltekit",
+	"version": "1.0.0",
+	"private": true,
+	"author": "Contentstack",
+	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -38,6 +42,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"contentstack": "^3.15.2",
 		"cookie": "^0.4.1",
-		"moment": "^2.29.3"
+		"moment": "^2.29.3",
+		"svelte-json-tree": "^1.0.0"
 	}
 }
