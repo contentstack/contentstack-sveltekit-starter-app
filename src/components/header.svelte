@@ -56,12 +56,14 @@
         {/if}
       </ul>
     </nav>
-    <div class="json-preview">
-      <ToolTip content="JSON Preview" direction="top">
-        <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          <img src="/json.svg" alt="JSON Preview icon" />
-        </span>
-      </ToolTip>
-    </div>
+    {#if headerData}
+      <div class="json-preview">
+        <ToolTip content="JSON Preview" direction="top">
+          <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img src="/json.svg" alt="JSON Preview icon" />
+          </span>
+        </ToolTip>
+      </div>
+    {/if}
   </div>
 </header>
