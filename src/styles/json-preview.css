@@ -39,3 +39,17 @@
   font-weight: 600 !important;
   color: rgb(0, 43, 54) !important;
 }
+.json-preview {
+  width: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .json-preview {
+    top: 2.3rem;
+  }
+}
