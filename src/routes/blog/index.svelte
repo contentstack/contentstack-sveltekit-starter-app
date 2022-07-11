@@ -4,21 +4,20 @@
   import RenderComponents from '../../components/renderComponent.svelte';
   import { getPageRes, getBlogListRes } from '../../helper/index';
   import type { BlogPostModel } from 'src/model/blogpost.model';
+  import { onMount } from 'svelte';
+  import { onEntryChange } from '../../sdk';
 
   let getList: BlogPostModel[] = [];
   let getEntry: any;
   let archived: BlogPostModel[] = [];
   const fetchBlogData = async () => {
     let result = await getPageRes('/blog');
-    return result;
+    getEntry = result;
   };
   const fetchBlogList = async () => {
     let result = await getBlogListRes();
-    return result;
+    getList = result;
   };
-
-  $: fetchBlogData().then((blogData) => (getEntry = blogData));
-  $: fetchBlogList().then((blogList) => (getList = blogList));
   $: getList &&
     getList.map((post: BlogPostModel) => {
       if (post.is_archived) {
@@ -26,6 +25,11 @@
       }
       archived = archived;
     });
+  onMount(() => {
+    fetchBlogData();
+    fetchBlogList();
+    onEntryChange(fetchBlogData);
+  });
 </script>
 
 <RenderComponents pageComponents={getEntry} blogPost={getList} />
