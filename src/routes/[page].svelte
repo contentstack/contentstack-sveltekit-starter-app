@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import type { Page } from 'src/model/page.model';
   import { afterUpdate, onMount } from 'svelte';
+  import { onEntryChange } from '../sdk';
 
   let entry: Page;
   let url: string = $page.url.pathname;
@@ -13,11 +14,13 @@
   };
   onMount(() => {
     fetchData();
+    onEntryChange(fetchData);
   });
   afterUpdate(() => {
     if (url !== window.location.pathname) {
       url = window.location.pathname;
       fetchData();
+      onEntryChange(fetchData);
     }
   });
 </script>

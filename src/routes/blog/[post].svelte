@@ -4,8 +4,9 @@
   import ArchiveRelative from '../../components/archive-relative.svelte';
   import RenderComponents from '../../components/renderComponent.svelte';
   import moment from 'moment';
-  import { afterUpdate } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
   import type { BlogPostModel } from 'src/model/blogpost.model';
+  import { onEntryChange } from '../../sdk';
   let post: BlogPostModel;
   let banner: any;
   let url = `/blog/${$page.params.post}`;
@@ -14,12 +15,16 @@
     let result = await getPageRes('/blog');
     banner = result;
   };
-  fetchBannerData();
   const getRelatedData = async () => {
     let result = await getBlogPostRes(url);
     post = result;
   };
-  getRelatedData();
+
+  onMount(() => {
+    fetchBannerData();
+    getRelatedData();
+    onEntryChange(getRelatedData);
+  });
 
   afterUpdate(() => {
     url = `/blog/${$page.params.post}`;
