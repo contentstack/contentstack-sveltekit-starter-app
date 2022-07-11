@@ -15,7 +15,7 @@ export const getHeaderRes = async (): Promise<HeaderModel> => {
     jsonRtePath: ['notification_bar.announcement_text']
   })) as HeaderModel[][];
   liveEdit && addEditableTags(response[0][0], 'header', true);
-  return response[0][0] as HeaderModel;
+  return response[0][0];
 };
 
 export const getFooterRes = async (): Promise<FooterModel> => {
@@ -25,7 +25,7 @@ export const getFooterRes = async (): Promise<FooterModel> => {
     jsonRtePath: ['copyright']
   })) as FooterModel[][];
   liveEdit && addEditableTags(response[0][0], 'footer', true);
-  return response[0][0] as FooterModel;
+  return response[0][0];
 };
 
 export const getAllEntries = async (): Promise<AllEntries> => {
