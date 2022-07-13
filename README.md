@@ -8,10 +8,6 @@ About this project: Sveltekit is a JavaScript framework for dynamic websites wit
 
 ![contentstack-sveltekit-starter-app-vercel-app](/static/starter-app.png)
 
-Send email to [security@contentstack.com](mailto:security@contentstack.com)
-
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
-
 ## Live Demo
 
 You can check the [live demo](https://contentstack-sveltekit-starter-app.vercel.app/) to get first-hand experience of the website.
