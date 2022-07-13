@@ -1,7 +1,7 @@
 {
   "name": "contentstack-sveltekit-starter-app",
   "description": "A starter app for Contentstack and Sveltekit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "author": "Contentstack",
   "license": "MIT",

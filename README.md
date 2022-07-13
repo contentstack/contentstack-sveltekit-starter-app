@@ -8,6 +8,10 @@ About this project: Sveltekit is a JavaScript framework for dynamic websites wit
 
 ![contentstack-sveltekit-starter-app-vercel-app](/static/starter-app.png)
 
+Send email to [security@contentstack.com](mailto:security@contentstack.com)
+
+You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+
 ## Live Demo
 
 You can check the [live demo](https://contentstack-sveltekit-starter-app.vercel.app/) to get first-hand experience of the website.
@@ -16,7 +20,7 @@ You can check the [live demo](https://contentstack-sveltekit-starter-app.vercel.
 
 We have created an in-depth tutorial on how you can create a Sveltekit starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
 
-[Build Website using Sveltekit and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-react-js-and-contentstack/)
+[Build Website using Sveltekit and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-with-sveltekit-and-contentstack/)
 
 **More Resources**
 
