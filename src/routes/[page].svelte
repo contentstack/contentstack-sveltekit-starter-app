@@ -1,20 +1,28 @@
 <script lang="ts">
-	import RenderComponent from '../components/renderComponent.svelte';
-	import { getPageRes } from '../helper/index.d';
-	import { page } from '$app/stores';
+  import RenderComponent from '../components/renderComponent.svelte';
+  import { getPageRes } from '../helper/index';
+  import { page } from '$app/stores';
+  import type { Page } from 'src/model/page.model';
+  import { afterUpdate, onMount } from 'svelte';
+  import { onEntryChange } from '../sdk';
 
-	let Entry: any;
-	const fetchData = async () => {
-		let entryRes = await getPageRes($page.url.pathname);
-		return entryRes;
-	};
-	$: fetchData().then((response) => (Entry = response));
+  let entry: Page;
+  let url: string = $page.url.pathname;
+  const fetchData = async () => {
+    let entryRes = await getPageRes(url);
+    entry = entryRes;
+  };
+  onMount(() => {
+    fetchData();
+    onEntryChange(fetchData);
+  });
+  afterUpdate(() => {
+    if (url !== window.location.pathname) {
+      url = window.location.pathname;
+      fetchData();
+      onEntryChange(fetchData);
+    }
+  });
 </script>
 
-<RenderComponent
-	pageComponents={Entry}
-	blogPost={null}
-	entryUid={Entry?.uid}
-	contentTypeUid="page"
-	locale={Entry?.locale}
-/>
+<RenderComponent pageComponents={entry} blogPost={null} />
