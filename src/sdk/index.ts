@@ -21,8 +21,8 @@ const Stack = contentstack.Stack({
   api_key: import.meta.env.VITE_CONTENTSTACK_API_KEY,
   delivery_token: import.meta.env.VITE_CONTENTSTACK_DELIVERY_TOKEN,
   environment: import.meta.env.VITE_CONTENTSTACK_ENVIRONMENT,
-  branch: `${import.meta.env.VITE_CONTENTSTACK_BRANCH}`
-    ? `${import.meta.env.VITE_CONTENTSTACK_BRANCH}`
+  branch: import.meta.env.VITE_CONTENTSTACK_BRANCH
+    ? import.meta.env.VITE_CONTENTSTACK_BRANCH
     : 'main',
   //@ts-ignore
   region: `${import.meta.env.VITE_CONTENTSTACK_REGION}`
