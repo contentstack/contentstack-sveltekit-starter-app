@@ -38,7 +38,7 @@
   "dependencies": {
     "@contentstack/live-preview-utils": "^1.1.0",
     "@contentstack/utils": "^1.1.2",
-    "@fontsource/fira-mono": "^4.5.0",
+    "@fontsource/fira-mono": "^4.5.9",
     "contentstack": "^3.15.2",
     "cookie": "^0.4.1",
     "moment": "^2.29.3",
