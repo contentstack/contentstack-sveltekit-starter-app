@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable no-undef */
-import contentstack from 'contentstack';
 import * as Utils from '@contentstack/utils';
 import ContentstackLivePreview from '@contentstack/live-preview-utils';
+import { customHostUrl, initializeContentStackSdk, isValidCustomHostUrl } from './utils';
 
 type GetEntry = {
   contentTypeUid: string;
@@ -17,30 +16,12 @@ type GetEntryByUrl = {
   jsonRtePath: string[] | undefined;
 };
 
-const Stack = contentstack.Stack({
-  api_key: import.meta.env.VITE_CONTENTSTACK_API_KEY,
-  delivery_token: import.meta.env.VITE_CONTENTSTACK_DELIVERY_TOKEN,
-  environment: import.meta.env.VITE_CONTENTSTACK_ENVIRONMENT,
-  branch: import.meta.env.VITE_CONTENTSTACK_BRANCH
-    ? import.meta.env.VITE_CONTENTSTACK_BRANCH
-    : 'main',
-  //@ts-ignore
-  region: `${import.meta.env.VITE_CONTENTSTACK_REGION}`
-    ? `${import.meta.env.VITE_CONTENTSTACK_REGION}`
-    : 'us',
-  live_preview: {
-    management_token: import.meta.env.VITE_CONTENTSTACK_MANAGEMENT_TOKEN
-      ? import.meta.env.VITE_CONTENTSTACK_MANAGEMENT_TOKEN
-      : '',
-    enable: true,
-    host: import.meta.env.VITE_CONTENTSTACK_API_HOST
-      ? import.meta.env.VITE_CONTENTSTACK_API_HOST
-      : ''
-  }
-});
+const Stack = initializeContentStackSdk();
+let customHostBaseUrl = import.meta.env.VITE_CONTENTSTACK_API_HOST as string;
+customHostBaseUrl = customHostUrl(customHostBaseUrl);
 
-if (import.meta.env.VITE_CONTENTSTACK_API_HOST) {
-  Stack.setHost(import.meta.env.VITE_CONTENTSTACK_API_HOST);
+if (isValidCustomHostUrl(customHostBaseUrl)) {
+  Stack.setHost(customHostBaseUrl);
 }
 
 ContentstackLivePreview.init({
