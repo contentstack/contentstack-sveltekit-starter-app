@@ -1,12 +1,12 @@
-import contentstack from "contentstack"
+import contentstack from 'contentstack';
 const {
   VITE_CONTENTSTACK_API_KEY,
   VITE_CONTENTSTACK_DELIVERY_TOKEN,
   VITE_CONTENTSTACK_ENVIRONMENT,
   VITE_CONTENTSTACK_BRANCH,
   VITE_CONTENTSTACK_REGION,
-  VITE_CONTENTSTACK_MANAGEMENT_TOKEN,
-  VITE_CONTENTSTACK_API_HOST,
+  VITE_CONTENTSTACK_PREVIEW_TOKEN,
+  VITE_CONTENTSTACK_PREVIEW_HOST,
   VITE_CONTENTSTACK_APP_HOST,
   VITE_CONTENTSTACK_LIVE_PREVIEW
 } = import.meta.env;
@@ -23,8 +23,8 @@ export const isBasicConfigValid = () => {
 export const isLpConfigValid = () => {
   return (
     !!VITE_CONTENTSTACK_LIVE_PREVIEW &&
-    !!VITE_CONTENTSTACK_MANAGEMENT_TOKEN &&
-    !!VITE_CONTENTSTACK_API_HOST &&
+    !!VITE_CONTENTSTACK_PREVIEW_TOKEN &&
+    !!VITE_CONTENTSTACK_PREVIEW_HOST &&
     !!VITE_CONTENTSTACK_APP_HOST
   );
 };
@@ -32,7 +32,10 @@ export const isLpConfigValid = () => {
 const setRegion = (): contentstack.Region => {
   let region = 'US' as keyof typeof contentstack.Region;
   if (!!VITE_CONTENTSTACK_REGION && VITE_CONTENTSTACK_REGION !== 'us') {
-    region = VITE_CONTENTSTACK_REGION.toLocaleUpperCase().replace('-', '_') as keyof typeof contentstack.Region;
+    region = VITE_CONTENTSTACK_REGION.toLocaleUpperCase().replace(
+      '-',
+      '_'
+    ) as keyof typeof contentstack.Region;
   }
   return contentstack.Region[region];
 };
@@ -43,9 +46,9 @@ const setLivePreviewConfig = (): contentstack.LivePreview => {
       'Your LP config is set to true. Please make you have set all required LP config in .env'
     );
   return {
-    management_token: VITE_CONTENTSTACK_MANAGEMENT_TOKEN as string,
+    preview_token: VITE_CONTENTSTACK_PREVIEW_TOKEN as string,
     enable: VITE_CONTENTSTACK_LIVE_PREVIEW === 'true',
-    host: VITE_CONTENTSTACK_API_HOST as string
+    host: VITE_CONTENTSTACK_PREVIEW_HOST as string
   } as contentstack.LivePreview;
 };
 // contentstack sdk initialization
