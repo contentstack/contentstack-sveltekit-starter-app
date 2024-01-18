@@ -43,7 +43,7 @@ const setRegion = (): contentstack.Region => {
 const setLivePreviewConfig = (): contentstack.LivePreview => {
   if (!isLpConfigValid())
     throw new Error(
-      'Your LP config is set to true. Please make you have set all required LP config in .env'
+      'Your LP config is set to true. Please make sure you have set all required LP config in .env'
     );
   return {
     preview_token: VITE_CONTENTSTACK_PREVIEW_TOKEN as string,
