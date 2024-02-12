@@ -18,22 +18,15 @@ type GetEntryByUrl = {
 
 const Stack = initializeContentStackSdk();
 let customHostBaseUrl = import.meta.env.VITE_CONTENTSTACK_API_HOST as string;
-customHostBaseUrl = customHostUrl(customHostBaseUrl);
+customHostBaseUrl = customHostBaseUrl ? customHostUrl(customHostBaseUrl) : '';
 
-if (isValidCustomHostUrl(customHostBaseUrl)) {
+if (customHostBaseUrl && isValidCustomHostUrl(customHostBaseUrl)) {
   Stack.setHost(customHostBaseUrl);
 }
 
 ContentstackLivePreview.init({
   //@ts-ignore
   stackSdk: Stack,
-  clientUrlParams: {
-    host: import.meta.env.VITE_CONTENTSTACK_APP_HOST
-  },
-  stackDetails: {
-    apiKey: import.meta.env.VITE_API_KEY,
-    environment: import.meta.env.VITE_ENVIRONMENT
-  },
   ssr: false
 });
 
